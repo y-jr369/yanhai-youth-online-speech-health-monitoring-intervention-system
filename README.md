@@ -15,6 +15,38 @@
 线上演示地址：
 https://speechhealth.cn
 
+演示效果如下：
+
+登录页：
+
+<p align="center">
+  <img src="docs/screenshots/0.jpg" alt="系统登录页" width="850">
+</p>
+
+系统总览：
+
+<p align="center">
+  <img src="docs/screenshots/1.jpg" alt="系统总览页" width="850">
+</p>
+
+帖子总览：
+
+<p align="center">
+  <img src="docs/screenshots/2.jpg" alt="帖子总览页" width="850">
+</p>
+
+预警中心：
+
+<p align="center">
+  <img src="docs/screenshots/3.jpg" alt="预警中心" width="850">
+</p>
+
+归档中心：
+
+<p align="center">
+  <img src="docs/screenshots/4.jpg" alt="归档中心" width="850">
+</p>
+
 二、目录结构
 ------------------------------------------------
 项目根目录主要包含：
