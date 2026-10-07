@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Secrets
+backend/deepseek_config.json
+.env
+.env.*
+
+# Local databases
+backend/*.db
+datasets/runtime/*.db
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
