@@ -1,0 +1,20 @@
+{
+  "labels": [
+    "self_harm",
+    "violence",
+    "depression",
+    "anxiety",
+    "academic_stress",
+    "social_withdrawal",
+    "abuse"
+  ],
+  "descriptions": {
+    "self_harm": "明确表达自伤、自杀、轻生、结束生命等倾向",
+    "violence": "明确表达伤害他人、报复、暴力威胁等倾向",
+    "depression": "明显的绝望、无价值感、持续低落等抑郁表达",
+    "anxiety": "明显焦虑、惊恐、睡眠障碍、躯体化焦虑表达",
+    "academic_stress": "以考试、绩点、作业、论文、保研等为核心的学业压力表达",
+    "social_withdrawal": "不想见人、退缩、孤立、社交回避等表达",
+    "abuse": "明显辱骂、攻击性贬损、冲突性语言"
+  }
+}
