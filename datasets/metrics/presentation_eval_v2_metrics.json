@@ -1,0 +1,132 @@
+{
+  "dev": {
+    "samples": 21,
+    "micro_precision": 0.9667,
+    "micro_recall": 0.9355,
+    "micro_f1": 0.9508,
+    "macro_f1": 0.9306,
+    "per_label": {
+      "self_harm": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "tp": 3,
+        "fp": 0,
+        "fn": 1
+      },
+      "violence": {
+        "precision": 0.6667,
+        "recall": 1.0,
+        "f1": 0.8,
+        "tp": 2,
+        "fp": 1,
+        "fn": 0
+      },
+      "depression": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 7,
+        "fp": 0,
+        "fn": 0
+      },
+      "anxiety": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 9,
+        "fp": 0,
+        "fn": 0
+      },
+      "academic_stress": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0
+      },
+      "social_withdrawal": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "tp": 3,
+        "fp": 0,
+        "fn": 1
+      },
+      "abuse": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0
+      }
+    }
+  },
+  "test": {
+    "samples": 35,
+    "micro_precision": 0.8298,
+    "micro_recall": 0.8667,
+    "micro_f1": 0.8478,
+    "macro_f1": 0.8438,
+    "per_label": {
+      "self_harm": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 3,
+        "fp": 2,
+        "fn": 0
+      },
+      "violence": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "depression": {
+        "precision": 0.6429,
+        "recall": 1.0,
+        "f1": 0.7826,
+        "tp": 9,
+        "fp": 5,
+        "fn": 0
+      },
+      "anxiety": {
+        "precision": 1.0,
+        "recall": 0.8333,
+        "f1": 0.9091,
+        "tp": 15,
+        "fp": 0,
+        "fn": 3
+      },
+      "academic_stress": {
+        "precision": 1.0,
+        "recall": 0.8333,
+        "f1": 0.9091,
+        "tp": 5,
+        "fp": 0,
+        "fn": 1
+      },
+      "social_withdrawal": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8889,
+        "tp": 4,
+        "fp": 0,
+        "fn": 1
+      },
+      "abuse": {
+        "precision": 0.6667,
+        "recall": 0.6667,
+        "f1": 0.6667,
+        "tp": 2,
+        "fp": 1,
+        "fn": 1
+      }
+    }
+  }
+}

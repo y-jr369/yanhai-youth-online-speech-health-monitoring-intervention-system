@@ -1,0 +1,43 @@
+{
+  "source_csv": "E:\\youth_speech_health_system_last\\archived_nonruntime_assets\\archive_training_artifacts\\label_pool_master_review_v7_content_first_evalmerge.csv",
+  "dev_count": 29,
+  "test_count": 45,
+  "dev_distribution": {
+    "self_harm": 4,
+    "abuse": 2,
+    "depression": 6,
+    "social_withdrawal": 3,
+    "anxiety": 7,
+    "violence": 1,
+    "academic_stress": 1,
+    "normal": 20
+  },
+  "test_distribution": {
+    "self_harm": 4,
+    "depression": 9,
+    "anxiety": 13,
+    "violence": 2,
+    "social_withdrawal": 5,
+    "abuse": 3,
+    "academic_stress": 2,
+    "normal": 24
+  },
+  "dev_target_hits": {
+    "self_harm": 2,
+    "abuse": 2,
+    "depression": 6,
+    "social_withdrawal": 3,
+    "anxiety": 6,
+    "violence": 1,
+    "academic_stress": 1
+  },
+  "test_target_hits": {
+    "self_harm": 4,
+    "depression": 8,
+    "anxiety": 8,
+    "violence": 2,
+    "social_withdrawal": 5,
+    "abuse": 3,
+    "academic_stress": 2
+  }
+}

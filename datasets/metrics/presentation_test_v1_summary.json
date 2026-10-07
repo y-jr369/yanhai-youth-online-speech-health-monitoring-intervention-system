@@ -1,0 +1,21 @@
+{
+  "source_files": [
+    "manual_review_candidates_v14_round1_normalized.csv",
+    "manual_review_candidates_v14_round2_normalized.csv",
+    "manual_review_candidates_v17_validation_normalized.csv",
+    "rare_label_manual_review_shortlist_normalized.csv",
+    "uncertain_redirect_pool_rare_top40_normalized_v2.csv"
+  ],
+  "samples": 33,
+  "label_distribution": {
+    "self_harm": 5,
+    "abuse": 4,
+    "depression": 9,
+    "social_withdrawal": 5,
+    "anxiety": 18,
+    "violence": 3,
+    "academic_stress": 6,
+    "normal": 12
+  },
+  "output_jsonl": "E:\\youth_speech_health_system_last\\backend\\presentation_test.jsonl"
+}

@@ -1,0 +1,158 @@
+{
+  "base_model": {
+    "training_split_v20_dev": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\base_model",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\training\\training_split_v20_dev.jsonl",
+      "rows": 29,
+      "loss": 0.11415761802345514,
+      "micro_f1": 0.8444444444444444,
+      "macro_f1": 0.8642072213500784,
+      "exact_match": 0.8620689511299133,
+      "threshold": 0.5
+    },
+    "training_split_v20_test": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\base_model",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\training\\training_split_v20_test.jsonl",
+      "rows": 45,
+      "loss": 0.14833674083153406,
+      "micro_f1": 0.8433734939759037,
+      "macro_f1": 0.76149247577819,
+      "exact_match": 0.7777777910232544,
+      "threshold": 0.5
+    },
+    "evaluation_balanced_manual_test": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\base_model",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\evaluation\\evaluation_balanced_manual_test.jsonl",
+      "rows": 45,
+      "loss": 0.14833674083153406,
+      "micro_f1": 0.8433734939759037,
+      "macro_f1": 0.76149247577819,
+      "exact_match": 0.7777777910232544,
+      "threshold": 0.5
+    },
+    "evaluation_presentation_test_v1": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\base_model",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\evaluation\\evaluation_presentation_test_v1.jsonl",
+      "rows": 33,
+      "loss": 0.47289834419886273,
+      "micro_f1": 0.6428571428571429,
+      "macro_f1": 0.6486139119679493,
+      "exact_match": 0.3333333432674408,
+      "threshold": 0.5
+    },
+    "evaluation_presentation_test_v2": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\base_model",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\evaluation\\evaluation_presentation_test_v2.jsonl",
+      "rows": 35,
+      "loss": 0.18096491694450378,
+      "micro_f1": 0.8210526315789474,
+      "macro_f1": 0.7587297105930647,
+      "exact_match": 0.6857143044471741,
+      "threshold": 0.5
+    }
+  },
+  "v1_noisy_all": {
+    "training_split_v20_dev": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v1",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\training\\training_split_v20_dev.jsonl",
+      "rows": 29,
+      "loss": 0.15199265629053116,
+      "micro_f1": 0.7317073170731707,
+      "macro_f1": 0.7614052614052614,
+      "exact_match": 0.8275862336158752,
+      "threshold": 0.5
+    },
+    "training_split_v20_test": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v1",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\training\\training_split_v20_test.jsonl",
+      "rows": 45,
+      "loss": 0.18474800139665604,
+      "micro_f1": 0.6857142857142857,
+      "macro_f1": 0.6043355141099502,
+      "exact_match": 0.644444465637207,
+      "threshold": 0.5
+    },
+    "evaluation_balanced_manual_test": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v1",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\evaluation\\evaluation_balanced_manual_test.jsonl",
+      "rows": 45,
+      "loss": 0.18474800139665604,
+      "micro_f1": 0.6857142857142857,
+      "macro_f1": 0.6043355141099502,
+      "exact_match": 0.644444465637207,
+      "threshold": 0.5
+    },
+    "evaluation_presentation_test_v1": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v1",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\evaluation\\evaluation_presentation_test_v1.jsonl",
+      "rows": 33,
+      "loss": 0.37867950399716693,
+      "micro_f1": 0.4782608695652174,
+      "macro_f1": 0.5006802721088436,
+      "exact_match": 0.09090909361839294,
+      "threshold": 0.5
+    },
+    "evaluation_presentation_test_v2": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v1",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\evaluation\\evaluation_presentation_test_v2.jsonl",
+      "rows": 35,
+      "loss": 0.24456731292108694,
+      "micro_f1": 0.5641025641025641,
+      "macro_f1": 0.48592132505175983,
+      "exact_match": 0.4000000059604645,
+      "threshold": 0.5
+    }
+  },
+  "v2_quick_priority200": {
+    "training_split_v20_dev": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v2_quick",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\training\\training_split_v20_dev.jsonl",
+      "rows": 29,
+      "loss": 0.11565893143415451,
+      "micro_f1": 0.8372093023255814,
+      "macro_f1": 0.8605442176870748,
+      "exact_match": 0.8965517282485962,
+      "threshold": 0.5
+    },
+    "training_split_v20_test": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v2_quick",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\training\\training_split_v20_test.jsonl",
+      "rows": 45,
+      "loss": 0.11841755360364914,
+      "micro_f1": 0.8536585365853658,
+      "macro_f1": 0.8537930323644609,
+      "exact_match": 0.7777777910232544,
+      "threshold": 0.5
+    },
+    "evaluation_balanced_manual_test": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v2_quick",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\evaluation\\evaluation_balanced_manual_test.jsonl",
+      "rows": 45,
+      "loss": 0.11841755360364914,
+      "micro_f1": 0.8536585365853658,
+      "macro_f1": 0.8537930323644609,
+      "exact_match": 0.7777777910232544,
+      "threshold": 0.5
+    },
+    "evaluation_presentation_test_v1": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v2_quick",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\evaluation\\evaluation_presentation_test_v1.jsonl",
+      "rows": 33,
+      "loss": 0.4467664659023285,
+      "micro_f1": 0.6285714285714286,
+      "macro_f1": 0.6896880896880896,
+      "exact_match": 0.3333333432674408,
+      "threshold": 0.5
+    },
+    "evaluation_presentation_test_v2": {
+      "model_dir": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\outputs\\finetuned_human_style_v2_quick",
+      "test_file": "E:\\youth_speech_health_system_last 5.1\\model_optimization\\data\\unified_training_source\\evaluation\\evaluation_presentation_test_v2.jsonl",
+      "rows": 35,
+      "loss": 0.1819984888037046,
+      "micro_f1": 0.8045977011494253,
+      "macro_f1": 0.8365079365079364,
+      "exact_match": 0.6857143044471741,
+      "threshold": 0.5
+    }
+  }
+}

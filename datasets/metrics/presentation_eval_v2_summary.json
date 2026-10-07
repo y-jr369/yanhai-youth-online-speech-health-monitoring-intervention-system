@@ -1,0 +1,34 @@
+{
+  "source_files": [
+    "manual_review_candidates_v14_round1_normalized.csv",
+    "manual_review_candidates_v14_round2_normalized.csv",
+    "manual_review_candidates_v17_validation_normalized.csv",
+    "rare_label_manual_review_shortlist_normalized.csv",
+    "uncertain_redirect_pool_rare_top40_normalized_v2.csv"
+  ],
+  "pool_samples": 115,
+  "dev_samples": 21,
+  "test_samples": 35,
+  "dev_label_distribution": {
+    "self_harm": 4,
+    "anxiety": 9,
+    "depression": 7,
+    "abuse": 2,
+    "violence": 2,
+    "academic_stress": 3,
+    "social_withdrawal": 4,
+    "normal": 8
+  },
+  "test_label_distribution": {
+    "depression": 9,
+    "self_harm": 3,
+    "anxiety": 18,
+    "social_withdrawal": 5,
+    "violence": 1,
+    "academic_stress": 6,
+    "abuse": 3,
+    "normal": 12
+  },
+  "output_dev_jsonl": "E:\\youth_speech_health_system_last\\backend\\presentation_dev_v2.jsonl",
+  "output_test_jsonl": "E:\\youth_speech_health_system_last\\backend\\presentation_test_v2.jsonl"
+}

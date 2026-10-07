@@ -1,0 +1,19 @@
+{
+  "output": "model_optimization\\data\\quick_v2\\training_split_v20_plus_priority200_train.jsonl",
+  "rows": 1118,
+  "empty_label_rows": 488,
+  "source_counts": {
+    "base_train": 926,
+    "priority200_human_style": 192
+  },
+  "label_counts": {
+    "social_withdrawal": 129,
+    "depression": 256,
+    "anxiety": 295,
+    "abuse": 127,
+    "violence": 71,
+    "self_harm": 64,
+    "academic_stress": 128
+  },
+  "note": "base training split + priority 200 human-style labels only; no large noisy candidate pool."
+}
