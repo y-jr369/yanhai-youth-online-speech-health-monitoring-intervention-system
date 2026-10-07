@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>帖子总览 - 言海瞭望</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260501-long-diagonal-lines">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f0f4ff 0%, #e2e8f0 100%);
+      min-height: 100vh;
+      color: #334155;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+    .navbar {
+      background: rgba(255, 255, 255, 0.82) !important;
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #1d4ed8 !important;
+    }
+    .nav-link {
+      color: #64748b !important;
+      margin-left: 8px;
+      border-radius: 10px;
+      padding: 8px 14px !important;
+    }
+    .nav-link.active,
+    .nav-link:hover {
+      background: rgba(59, 130, 246, 0.10);
+      color: #1d4ed8 !important;
+    }
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .page-subtitle {
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 780px;
+    }
+    .page-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      min-width: 240px;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+    }
+    .stat-box {
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(248, 250, 252, 0.85);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      height: 100%;
+    }
+    .stat-title {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .stat-value {
+      font-size: 34px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .table thead th {
+      color: #64748b;
+      font-size: 13px;
+      border-bottom: 2px solid rgba(148, 163, 184, 0.20);
+      white-space: nowrap;
+    }
+    .table tbody td {
+      vertical-align: middle;
+      font-size: 14px;
+      color: #334155;
+    }
+    .posts-table {
+      table-layout: fixed;
+      width: 100%;
+      min-width: 0;
+    }
+    .posts-table th:nth-child(1),
+    .posts-table td:nth-child(1) {
+      width: 9.5%;
+    }
+    .posts-table th:nth-child(2),
+    .posts-table td:nth-child(2) {
+      width: 10%;
+    }
+    .posts-table th:nth-child(3),
+    .posts-table td:nth-child(3) {
+      width: 8.5%;
+    }
+    .posts-table th:nth-child(4),
+    .posts-table td:nth-child(4) {
+      width: 28%;
+    }
+    .posts-table td:nth-child(4) {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .post-excerpt {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.7;
+    }
+    .posts-table th:nth-child(5),
+    .posts-table td:nth-child(5) {
+      width: 6%;
+    }
+    .posts-table th:nth-child(6),
+    .posts-table td:nth-child(6) {
+      width: 6.5%;
+    }
+    .posts-table th:nth-child(7),
+    .posts-table td:nth-child(7) {
+      width: 5.5%;
+    }
+    .posts-table th:nth-child(8),
+    .posts-table td:nth-child(8) {
+      width: 14%;
+    }
+    .posts-table th:nth-child(9),
+    .posts-table td:nth-child(9) {
+      width: 12%;
+      white-space: nowrap;
+    }
+    .posts-table td:nth-child(2),
+    .posts-table td:nth-child(3),
+    .posts-table td:nth-child(5),
+    .posts-table td:nth-child(8) {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .table-hover tbody tr:hover td {
+      background: rgba(59, 130, 246, 0.04);
+    }
+    .filter-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+    .action-status {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 12px;
+      min-height: 20px;
+    }
+    .result-panel {
+      margin-top: 18px;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(248, 250, 252, 0.92);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+    .result-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .result-meta,
+    .result-summary {
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .result-metric {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 14px;
+      padding: 14px 16px;
+      height: 100%;
+    }
+    .result-metric-label {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .result-metric-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    @media (max-width: 991.98px) {
+      .page-header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .page-actions {
+        align-items: stretch;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="sidebar-mark"><i class="fa-solid fa-shield-halved"></i><span>言海瞭望</span></div>
+      <nav class="app-nav">
+        <a href="dashboard.html"><i class="fa-solid fa-chart-pie"></i>总览</a>
+        <a class="active" href="posts.html"><i class="fa-solid fa-table-list"></i>帖子总览</a>
+        <a href="alerts.html"><i class="fa-solid fa-bell"></i>预警中心</a>
+        <a href="archive.html"><i class="fa-solid fa-box-archive"></i>归档中心</a>
+        <a href="intervention.html"><i class="fa-solid fa-user-doctor"></i>干预跟进</a>
+      </nav>
+      <div class="sidebar-foot">风险识别、人工审核与干预跟踪协同完成。</div>
+    </aside>
+    <main class="app-main">
+    <div class="page-header">
+      <div>
+        <div class="page-title">真实抓取帖子总览</div>
+        <div class="page-subtitle">查看已入库帖子，支持按关键词和风险等级快速筛选。</div>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+      <div class="col-md-3">
+        <div class="stat-box glass-card">
+          <div class="stat-title">帖子总数</div>
+          <div class="stat-value" id="totalPostsValue">0</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box glass-card">
+          <div class="stat-title">高风险</div>
+          <div class="stat-value text-danger" id="highRiskValue">0</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box glass-card">
+          <div class="stat-title">中风险</div>
+          <div class="stat-value text-warning" id="mediumRiskValue">0</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box glass-card">
+          <div class="stat-title">低风险</div>
+          <div class="stat-value text-primary" id="lowRiskValue">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card p-4 mb-4">
+      <div class="row g-3 align-items-end">
+        <div class="col-md-5">
+          <div class="filter-label">关键词</div>
+          <input id="keywordInput" class="form-control" placeholder="输入标题、摘要或作者关键词">
+        </div>
+        <div class="col-md-3">
+          <div class="filter-label">风险等级</div>
+          <select id="riskLevelSelect" class="form-select">
+            <option value="">全部</option>
+            <option value="high">高风险</option>
+            <option value="medium">中风险</option>
+            <option value="low">低风险</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-primary me-2" onclick="searchPosts()"><i class="fa-solid fa-magnifying-glass me-1"></i>查询</button>
+          <button class="btn btn-outline-secondary" onclick="resetFilters()">重置</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card p-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="fw-semibold">帖子列表</div>
+        <div id="pageInfo" class="text-muted">第 1 / 1 页，共 0 条</div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle posts-table">
+          <thead>
+            <tr>
+              <th>帖子ID</th>
+              <th>标题</th>
+              <th>作者</th>
+              <th>摘要</th>
+              <th>标签</th>
+              <th>风险等级</th>
+              <th>风险分</th>
+              <th>命中证据</th>
+              <th>时间 / 链接</th>
+            </tr>
+          </thead>
+          <tbody id="postTableBody"></tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-end gap-2 mt-3">
+        <button id="prevBtn" class="btn btn-outline-secondary" onclick="prevPage()">上一页</button>
+        <button id="nextBtn" class="btn btn-outline-secondary" onclick="nextPage()">下一页</button>
+      </div>
+    </div>
+    </main>
+  </div>
+
+  <footer class="site-icp">ICP备案号：吉ICP备2026003493号-1</footer>
+
+  <script src="assets/js/api.js?v=20260501-align"></script>
+  <script src="assets/js/common.js?v=20260501-align"></script>
+  <script src="assets/js/posts.js?v=20260501-beijing-time"></script>
+</body>
+</html>
+
+
+
+
+

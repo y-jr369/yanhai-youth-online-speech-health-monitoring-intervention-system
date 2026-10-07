@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>归档中心 - 言海瞭望</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260501-long-diagonal-lines">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f0f4ff 0%, #e2e8f0 100%);
+      min-height: 100vh;
+      color: #334155;
+      font-family: "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -2;
+      pointer-events: none;
+    }
+    .float-light {
+      position: fixed;
+      background: rgba(59, 130, 246, 0.15);
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(45px);
+      animation: float 15s infinite ease-in-out;
+      z-index: -1;
+    }
+    .light-1 { width: 300px; height: 300px; top: -10%; left: -5%; }
+    .light-2 { width: 250px; height: 250px; bottom: 10%; right: -5%; animation-delay: 5s; background: rgba(139, 92, 246, 0.1); }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-40px) scale(1.1); }
+    }
+    .navbar {
+      background: rgba(255, 255, 255, 0.7) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 14px 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 19px;
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.5px;
+    }
+    .navbar-brand i { -webkit-text-fill-color: #3b82f6; }
+    .nav-link {
+      color: #64748b !important;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 8px 16px !important;
+      border-radius: 10px;
+      margin: 0 4px;
+    }
+    .nav-link:hover {
+      color: #1e293b !important;
+      background: rgba(59, 130, 246, 0.08);
+    }
+    .nav-link.active {
+      color: #2563eb !important;
+      background: rgba(59, 130, 246, 0.1);
+      box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.2);
+    }
+    .page-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 28px;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+    }
+    .page-title::before {
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      content: '\f187';
+      margin-right: 14px;
+      color: #3b82f6;
+      font-size: 22px;
+    }
+    .card-box {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 26px;
+      margin-bottom: 24px;
+      border: 1px solid #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+    .card-inner-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #475569;
+      display: flex;
+      align-items: center;
+    }
+    .card-inner-title i { margin-right: 10px; color: #3b82f6; }
+    .table { color: #334155; margin-bottom: 0; font-size: 14px; }
+    .table>:not(caption)>*>* {
+      background-color: transparent;
+      border-bottom-color: rgba(0, 0, 0, 0.05);
+      padding: 16px 12px;
+      vertical-align: middle;
+    }
+    .table thead th {
+      color: #64748b;
+      font-weight: 600;
+      font-size: 13px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.08) !important;
+      white-space: nowrap;
+    }
+    .page-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .status-text {
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="sidebar-mark"><i class="fa-solid fa-shield-halved"></i><span>言海瞭望</span></div>
+      <nav class="app-nav">
+        <a href="dashboard.html"><i class="fa-solid fa-chart-pie"></i>总览</a>
+        <a href="posts.html"><i class="fa-solid fa-table-list"></i>帖子总览</a>
+        <a href="alerts.html"><i class="fa-solid fa-bell"></i>预警中心</a>
+        <a class="active" href="archive.html"><i class="fa-solid fa-box-archive"></i>归档中心</a>
+        <a href="intervention.html"><i class="fa-solid fa-user-doctor"></i>干预跟进</a>
+      </nav>
+      <div class="sidebar-foot">风险识别、人工审核与干预跟踪协同完成。</div>
+    </aside>
+    <main class="app-main">
+    <div class="page-title">归档中心</div>
+
+    <div class="card-box">
+      <div class="page-actions">
+        <div>
+          <div class="card-inner-title"><i class="fa-solid fa-box-archive"></i>历史归档记录</div>
+          <div id="archiveStatus" class="status-text">支持一键导出当前归档列表为 Excel，方便打印或提交材料。</div>
+        </div>
+        <button id="exportArchiveBtn" class="btn btn-primary">
+          <i class="fa-solid fa-file-export me-1"></i>导出 Excel
+        </button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>预警ID</th>
+              <th>风险等级</th>
+              <th>帖子信息</th>
+              <th>归档原因</th>
+              <th>归档人</th>
+              <th>归档时间</th>
+              <th>跟进信息</th>
+            </tr>
+          </thead>
+          <tbody id="archiveTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+    </main>
+  </div>
+
+  <footer class="site-icp">ICP备案号：吉ICP备2026003493号-1</footer>
+
+  <script src="assets/js/api.js?v=20260501-align"></script>
+  <script src="assets/js/archive.js?v=20260501-align"></script>
+</body>
+</html>
+
+
+
+
+
