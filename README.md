@@ -47,6 +47,12 @@ https://speechhealth.cn
   <img src="docs/screenshots/4.jpg" alt="归档中心" width="850">
 </p>
 
+干预跟进工作台：
+
+<p align="center">
+  <img src="docs/screenshots/5.jpg" alt="干预跟进工作台" width="850">
+</p>
+
 二、目录结构
 ------------------------------------------------
 项目根目录主要包含：
