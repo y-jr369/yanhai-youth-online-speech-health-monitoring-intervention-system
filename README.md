@@ -43,6 +43,18 @@ https://speechhealth.cn
 
 三、运行环境
 ------------------------------------------------
+克隆仓库（含模型权重）：
+
+本仓库使用 Git LFS 管理 backend/model/model.safetensors（约 390 MB），克隆前请先安装 Git LFS：
+
+git lfs install
+git clone https://github.com/y-jr369/yanhai-youth-online-speech-health-monitoring-intervention-system.git
+
+如果已经克隆完成，但 backend/model/model.safetensors 只有 1 KB 左右（内容是一段 oid 文本），
+说明模型权重没有被拉取，请在项目根目录执行：
+
+git lfs pull
+
 推荐环境：
 1. Windows 10 / Windows 11，或 Ubuntu 20.04 及以上。
 2. Python 3.10 或 3.11。Python 3.12/3.13 在本机也可运行，但比赛复现建议优先使用 3.10/3.11。
@@ -170,6 +182,10 @@ GET /api/interventions/{intervention_id}/reply/logs
 
 datasets/runtime/runtime_showcase_demo_v2.db
 
+说明：仓库中未包含演示数据库文件（datasets/runtime/ 下的 .db 文件已在 .gitignore 中忽略）。
+首次在本地启动时，系统会自动创建数据表并初始化默认账号和抓取源，此时帖子、预警、归档等列表均为空，
+需要先通过总览页的“手动更新抓取”采集数据，或自行把数据库文件放到上述路径后再启动。
+
 如需指定其他数据库，可以设置环境变量 MONITORING_DB_PATH。
 
 Windows 示例：
@@ -198,6 +214,9 @@ backend/model
 2. config.json：模型配置。
 3. labels.json：风险标签配置。
 4. tokenizer.json / tokenizer_config.json：分词器配置。
+
+说明：model.safetensors 通过 Git LFS 存储，克隆后请确认该文件大小约为 390 MB；
+如果只有 1 KB 左右，请执行 git lfs pull 重新拉取。
 
 已整合的数据文件位于 datasets，包含训练集、评估集、人工标注样本、指标文件和演示数据库。
 
@@ -267,6 +286,10 @@ datasets/runtime/runtime_showcase_demo_v2.db
 
 说明 DeepSeek 未成功调用。请检查 backend/deepseek_config.json、API Key、网络和账号额度。
 
+
+7. clone 之后模型文件只有 1 KB
+
+说明 Git LFS 权重没有被拉取。请先执行 git lfs install，再在项目根目录执行 git lfs pull 重新拉取模型文件。
 
 十三、当前版本特点
 ------------------------------------------------
